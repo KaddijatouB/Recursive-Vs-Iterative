@@ -1,0 +1,20 @@
+# ninja log v5
+1	666	1673465672907642006	CMakeFiles/Recursive_Vs_Iterative.dir/test.cpp.o	595d0602729418a3
+5	720	1673465836314835374	CMakeFiles/Recursive_Vs_Iterative.dir/main.cpp.o	b643e6a5dc6fb0f1
+3	223	1673465963194704842	CMakeFiles/Recursive_Vs_Iterative.dir/test.cpp.o	595d0602729418a3
+2	795	1673465963765996071	CMakeFiles/Recursive_Vs_Iterative.dir/main.cpp.o	b643e6a5dc6fb0f1
+795	885	1673465963858417997	Recursive_Vs_Iterative	7de12073b3c0e36f
+2	750	1673466053800085116	CMakeFiles/Recursive_Vs_Iterative.dir/main.cpp.o	b643e6a5dc6fb0f1
+751	836	1673466053888536368	Recursive_Vs_Iterative	7de12073b3c0e36f
+2	813	1673466722945363523	CMakeFiles/Recursive_Vs_Iterative.dir/main.cpp.o	b643e6a5dc6fb0f1
+813	904	1673466723039972060	Recursive_Vs_Iterative	7de12073b3c0e36f
+3	791	1673467210666301346	CMakeFiles/Recursive_Vs_Iterative.dir/main.cpp.o	b643e6a5dc6fb0f1
+791	881	1673467210764333262	Recursive_Vs_Iterative	7de12073b3c0e36f
+5	787	1673467517375082948	CMakeFiles/Recursive_Vs_Iterative.dir/main.cpp.o	b643e6a5dc6fb0f1
+787	876	1673467517468340309	Recursive_Vs_Iterative	7de12073b3c0e36f
+2	722	1673467761476846471	CMakeFiles/Recursive_Vs_Iterative.dir/main.cpp.o	b643e6a5dc6fb0f1
+722	808	1673467761566020552	Recursive_Vs_Iterative	7de12073b3c0e36f
+2	779	1673468444081878333	CMakeFiles/Recursive_Vs_Iterative.dir/main.cpp.o	b643e6a5dc6fb0f1
+780	869	1673468444175979405	Recursive_Vs_Iterative	7de12073b3c0e36f
+2	719	1673468540870082307	CMakeFiles/Recursive_Vs_Iterative.dir/main.cpp.o	b643e6a5dc6fb0f1
+719	803	1673468540957347055	Recursive_Vs_Iterative	7de12073b3c0e36f
