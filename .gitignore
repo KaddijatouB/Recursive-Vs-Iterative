@@ -31,6 +31,9 @@
 *.out
 *.app
 
-# CLion
+# CLion directories
 cmake-build-debug/
 .idea/
+
+# Mac
+.DS_Store

@@ -9,19 +9,22 @@
 #include <fstream>
 #include <chrono>
 
-using namespace std;
+using namespace std::chrono;
+using std::ofstream;
+using std::cerr;
+using std::endl;
+using std::cout;
 
+// Declaration of the power functions
 double iterativePower(double base, int exponent);
 double recursivePower(double base, int exponent);
 
+// Main function mimics a call stack
 int main() {
-    // For timing functions
-    chrono::time_point<chrono::steady_clock> start;
-    chrono::time_point<chrono::steady_clock> end;
-
     //to compute the power
     double powerI,  powerR;
 
+    //open file
     ofstream out;
     out.open("result.csv");
     // Check if file open fails, then print error message and return -1
@@ -31,39 +34,44 @@ int main() {
     }
     // Write the fields header
     out << "n, iterative-time, recursive-time" << endl;
-    // Set the base to 3.14159265359
-    double base = 3.14159265359;
+    // Set the base to pi = 3.14159265359
+    double pi = 3.14159265359;
 
-    // iterate n = 5000 times
-    int n = 10000;
+    // Iterate n = 60000 times
+    int n = 60000;
 
-    for (int i = 0; i < n; i++) {
-        //start timer iterative
-        start = chrono::steady_clock::now();
+    for (int i = 1; i <= n; i++) {
+        // Start timer iterative
+        time_point<high_resolution_clock> startI = high_resolution_clock::now();
+
+        // Call the iterative function
+        powerI = iterativePower(pi,i);
+
+        // End timer and compute the difference
+        time_point<high_resolution_clock> endI = high_resolution_clock::now();
+        auto iterativeTime = duration_cast<nanoseconds>(endI - startI).count();
+
+        // Start timer for recursive
+        time_point<high_resolution_clock> startR = high_resolution_clock::now();
+
         // call the iterative function
-        powerI = iterativePower(base,i);
+        powerR = iterativePower(pi,i);
+
         //end timer and compute the difference
-        end = chrono::steady_clock::now();
-        auto iterativeTime = end - start;
+        time_point<high_resolution_clock> endR = high_resolution_clock::now();
+        auto recursiveTime =  duration_cast<nanoseconds>(endR - startR).count();
 
-        //start timer for recursive
-        start = chrono::steady_clock::now();
-        // call the iterative function
-        powerR = iterativePower(base,i);
-        //end timer and compute the difference
-        end = chrono::steady_clock::now();
-
-        auto recursiveTime = end - start;
-
-        out << i << "," << iterativeTime.count() <<","<< recursiveTime.count() << endl;
+        // Output info on file
+        out << i << "," << iterativeTime <<","<< recursiveTime << endl;
 
     }
-
-    cout << "Final  power: " << powerI << " " << powerR << endl;
+    cout << "CSV file successfully created." << endl << endl;
+    out.close();
+    cout << "Final power: " << powerI << " " << powerR << endl;
     return 0;
 
 }
-// Iterative implementation
+// Iterative power implementation
 double iterativePower(double base, int exponent){
     double retVal = 1.0;
     if (exponent < 0){
@@ -74,7 +82,7 @@ double iterativePower(double base, int exponent){
     }
     return retVal;
 }
-// Recursive implementation
+// Recursive power implementation
 double recursivePower(double base, int exponent){
     if (exponent < 0){
         return 1.0 / recursivePower(base, -exponent);

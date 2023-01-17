@@ -3,4 +3,4 @@ project(Recursive_Vs_Iterative)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Recursive_Vs_Iterative main.cpp test.cpp)
+add_executable(Recursive_Vs_Iterative main.cpp)
